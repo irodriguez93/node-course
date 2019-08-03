@@ -5,8 +5,6 @@ getNotes = () => {return 'Your Notes...'}
 
 const addNote = (title, body) => {
     const notes = loadNotes()
-    console.log(notes)
-
     const duplicateNote = notes.find((note) => note.title===title)
 
     if (!duplicateNote){
@@ -42,6 +40,16 @@ const listNotes = () => {
     });
 }
 
+const readNote = (title) => {
+    const notes = loadNotes()
+    const note = notes.find((note) => note.title===title)
+    if (note){
+        console.log(chalk.inverse(note.title))
+        console.log(chalk.inverse(note.body))
+    }else {
+        console.log("Note not found")
+    }
+}
 
 const saveNotes = (notes) => {
     const dataJSON = JSON.stringify(notes)
@@ -64,5 +72,6 @@ module.exports = {
     getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote,
-    listNotes: listNotes
+    listNotes: listNotes,
+    readNote: readNote
 }
