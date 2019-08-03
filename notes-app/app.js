@@ -4,7 +4,7 @@ const yargs = require('yargs')
 const notes = require('./notes.js')
 const command = process.argv[2]
 
-//console.log(command)
+console.log(command)
 yargs.version('1.1.0')
 
 yargs.command({
@@ -56,7 +56,8 @@ yargs.command({
     command: 'list',
     describe: 'list notes',
     handler(){
-        console.log('list all notes')
+       // console.log('list all notes')
+        notes.listNotes()
     }
 })
 
