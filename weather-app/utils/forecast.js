@@ -3,7 +3,7 @@ const request =  require('request')
 
 const forecast = (x,y, callback )=> {
     const url = 'https://api.darksky.net/forecast/18c9fed0acff8ae6fd162ad43a718bf7/'+ x +','+ y 
-    console.log(url)
+   // console.log(url)
 
     request({url: url, json:true}, (error, response)=>{
         if (error){
