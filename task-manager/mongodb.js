@@ -28,11 +28,23 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true,useUnifiedTopology: tr
     //     console.log(response)
     // })
 
-    db.collection('tasks').findOne({_id: new ObjectID("5d6446ebb6c55d0d5ec17528")}, (error, response)=>{
-        console.log(response)
-    })
-    db.collection('tasks').find({completed: false}).toArray((error, response)=>{
-        console.log(response)
-    })
+    // db.collection('tasks').findOne({_id: new ObjectID("5d6446ebb6c55d0d5ec17528")}, (error, response)=>{
+    //     console.log(response)
+    // })
+    // db.collection('tasks').find({completed: false}).toArray((error, response)=>{
+    //     console.log(response)
+    // })
+    
+    db.collection('tasks').updateMany({
+        completed: false
 
+    },{
+        $set: {
+            completed: true
+        }
+    }).then((result)=>{
+        console.log(result)
+    }).catch((error)=>{
+        console.log(error)
+    })
 })
