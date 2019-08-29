@@ -35,16 +35,25 @@ MongoClient.connect(connectionURL, {useNewUrlParser: true,useUnifiedTopology: tr
     //     console.log(response)
     // })
     
-    db.collection('tasks').updateMany({
-        completed: false
+    // db.collection('tasks').updateMany({
+    //     completed: false
 
-    },{
-        $set: {
-            completed: true
-        }
-    }).then((result)=>{
-        console.log(result)
-    }).catch((error)=>{
-        console.log(error)
-    })
+    // },{
+    //     $set: {
+    //         completed: true
+    //     }
+    // }).then((result)=>{
+    //     console.log(result)
+    // }).catch((error)=>{
+    //     console.log(error)
+    // })
+
+
+    // db.collection('tasks').deleteOne({
+    //     description:'Go to the gym'
+    // }).then( (result)=>{
+    //     console.log(result)
+    // }).catch((error)=>{
+    //     console.log(error)
+    // })
 })
